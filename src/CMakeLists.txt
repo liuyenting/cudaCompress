@@ -43,3 +43,11 @@ target_link_libraries ( cudaCompressTest cudaCompress)
 # 	)
 # 
 # target_link_libraries ( examples cudaCompress)
+
+if (BUILD_SHARED_LIBS)
+	target_compile_definitions(cudaCompress PUBLIC CUCOMP_BUILD_DLL)
+else()
+	target_compile_definitions(cudaCompress PUBLIC CUCOMP_BUILD_STANDALONE)
+	target_compile_definitions(cudaCompressTest PUBLIC CUCOMP_BUILD_STANDALONE)
+#	target_compile_definitions(examples PUBLIC CUCOMP_BUILD_STANDALONE)
+endif()

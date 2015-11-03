@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 find_package(CUDA QUIET REQUIRED)
 
+option(BUILD_SHARED_LIBS "Build shared libararies" ON)
+
 # We want c++11
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
