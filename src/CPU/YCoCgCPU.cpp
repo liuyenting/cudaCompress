@@ -1,6 +1,6 @@
 #include "YCoCgCPU.h"
 
-#include <memory>
+#include <string.h>
 
 #include <cudaCompress/util.h>
 

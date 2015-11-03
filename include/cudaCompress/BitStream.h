@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <cassert>
 #include <vector>
+#include <cstring>
 
 
 namespace cudaCompress {

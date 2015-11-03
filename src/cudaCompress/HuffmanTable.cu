@@ -223,7 +223,7 @@ void HuffmanDecodeTable::build(const std::vector<uint>& codewordCountPerLength)
     std::vector<uint> codewordLengths;
     codewordLengths.reserve(codewordCount);
     for(uint i = 0; i < codewordCountPerLength.size(); i++) {
-        codewordLengths.insert(codewordLengths.cend(), codewordCountPerLength[i], i + 1);
+        codewordLengths.insert(codewordLengths.end(), codewordCountPerLength[i], i + 1);
     }
 
     // find codewords

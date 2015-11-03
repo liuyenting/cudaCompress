@@ -3,6 +3,7 @@
 
 
 #include <cudaCompress/global.h>
+#include <cstddef>
 
 
 namespace cudaCompress {
