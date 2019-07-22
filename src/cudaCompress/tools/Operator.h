@@ -6,7 +6,7 @@
 #include <cfloat>
 #include <climits>
 
-#include <host_defines.h>
+#include <cuda_runtime.h>
 
 
 template <typename T>

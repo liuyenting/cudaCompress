@@ -2,7 +2,7 @@
 #define __functor_h__
 
 
-#include <host_defines.h>
+#include <cuda_runtime.h>
 
 
 template <typename T>
