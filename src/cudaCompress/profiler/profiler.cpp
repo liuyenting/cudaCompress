@@ -19,8 +19,7 @@ Last Changed: 2013-04-10
 
 #ifdef _WIN32
     #include <windows.h>
-#endif
-#ifdef __linux
+#elif defined(__linux) || defined(__APPLE__)
     #include <sys/time.h>
 #endif
 
@@ -31,7 +30,7 @@ namespace {
         LARGE_INTEGER time;
         QueryPerformanceCounter( &time );
         return time.QuadPart;
-#elif defined(__linux)
+#elif defined(__linux) || defined(__APPLE__)
         timeval tv;
         gettimeofday(&tv, 0);
         return uint64(tv.tv_sec) * uint64(1000000) + uint64(tv.tv_usec);
@@ -45,7 +44,7 @@ namespace {
         LARGE_INTEGER perfFreq;
         QueryPerformanceFrequency(&perfFreq);
         return perfFreq.QuadPart;
-#elif defined(__linux)
+#elif defined(__linux) || defined(__APPLE__)
         return uint64(1000000);
 #else
         #error Not implemented yet on this system!

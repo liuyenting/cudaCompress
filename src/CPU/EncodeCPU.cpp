@@ -1,6 +1,7 @@
 #include "EncodeCPU.h"
 
 #include <cassert>
+#include <stdexcept>
 
 #include <cudaCompress/util.h>
 
@@ -32,7 +33,7 @@ std::string getCoderName(ECoder coder)
         case CODER_RUNLENGTH_HUFFMAN:
             return "Run-length + Huffman";
         default:
-            return false;
+            throw std::invalid_argument("invalid coder");
     }
 }
 
