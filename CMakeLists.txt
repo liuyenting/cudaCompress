@@ -1,33 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
-find_package(CUDA REQUIRED)
-find_package(OpenMP REQUIRED)
+cmake_minimum_required(VERSION 3.10)
+project(cudaCompress)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_C_FLAGS}")
-
-option(BUILD_SHARED_LIBS "Build shared libararies" ON)
-
-# We want c++11
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-# CMake < 3.1 does not support above variables
-if (CMAKE_VERSION VERSION_LESS "3.1")
-	if ((CMAKE_CXX_COMPILER_ID MATCHES "Clang") OR (CMAKE_CXX_COMPILER_ID STREQUAL "GNU"))
-		set(CMAKE_CXX_FLAGS "-std=c++11")
-	else()
-		message(FATAL_ERROR "Cannot enable c++11, don't know how for this compilers use CMake > 3.1 or update CMakeLists.txt for your compiler.")
-	endif()
-
-endif()
-
-# Pass options to NVCC
-set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-O3 -std=c++11 -gencode arch=compute_30,code=sm_30)
-
-# Specify include directories
-include_directories(
-	include
-	src
-	)
-
-add_subdirectory( src )
+add_subdirectory(src/cudaCompress)
