@@ -526,7 +526,7 @@ int benchmarkVolumeFloat(
 
     if(!filenameComp.empty()) {
         FILE* fileComp = 0;
-        fopen_s(&fileComp, filenameComp.c_str(), "wb");
+        fileComp = fopen(filenameComp.c_str(), "wb");
         if(!fileComp) {
             printf("Failed to open file %s for writing.\n", filenameComp.c_str());
         } else {
