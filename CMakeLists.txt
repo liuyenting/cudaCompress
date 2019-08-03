@@ -8,3 +8,4 @@ option(BUILD_SHARED_LIBS "Build shared library" OFF)
 
 add_subdirectory(src)
 add_subdirectory(test)
+add_subdirectory(examples)
