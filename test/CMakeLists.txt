@@ -42,5 +42,5 @@ target_link_libraries(
     PUBLIC
         cudaCompressLib
     PRIVATE
-		${CUDART_LIBRARY}
+        ${CUDART_LIBRARY}
 )

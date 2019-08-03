@@ -8,7 +8,7 @@
 
 #include "../reduce/reduce_app.cui"
 
-#include "../QuantizeKernels.cui"
+#include "QuantizeKernels.cui"
 
 
 namespace cudaCompress {
