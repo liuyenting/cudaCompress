@@ -3,7 +3,7 @@
 #include <cassert>
 #include <stdexcept>
 
-#include <cudaCompress/util.h>
+#include "../util.h"
 
 #include "HuffmanCPU.h"
 #include "HuffmanTableCPU.h"

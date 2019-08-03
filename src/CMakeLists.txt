@@ -15,16 +15,28 @@ find_library(CUDART_LIBRARY cudart ${CMAKE_CUDA_IMPLICIT_LINK_DIRECTORIES})
 ### 
 add_library(
 	cudaCompressLib
+		# CUDA
 		Encode.cpp
 		Instance.cpp
 		InstanceImpl.cpp
-		Timing.cpp
 		profiler/profiler.cpp
 		profiler/profilerlogwriter.cpp
 		profiler/profilerstreamwriter.cpp
 		reduce/reduce_plan.cpp
 		scan/scan_plan.cpp
+		Timing.cpp
 		util/CudaTimer.cpp
+		
+		# CPU
+		CPU/ArithmeticCPU.cpp
+		CPU/EncodeCPU.cpp
+		CPU/GolombRiceCPU.cpp
+		CPU/HistogramCPU.cpp
+		CPU/HuffmanCPU.cpp
+		CPU/HuffmanTableCPU.cpp
+		CPU/RBUCCPU.cpp
+		CPU/RunLengthCPU.cpp
+		CPU/YCoCgCPU.cpp
 )
 
 target_include_directories(
@@ -49,7 +61,7 @@ set_target_properties(
 		# built with -dc so member functions could be called by other libraries
 		CUDA_SEPARABLE_COMPILATION ON
 		# rename
-		OUTPUT_NAME "libcudacompress"
+		OUTPUT_NAME "cudacompress"
 )
 
 target_link_libraries(
