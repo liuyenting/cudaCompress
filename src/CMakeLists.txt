@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 3.10)
-
 ###
 # Declare dependencies
 ###
@@ -57,15 +55,14 @@ target_include_directories(
 
 target_compile_features(
     cudaCompressLib
-    PRIVATE
+	PUBLIC
+		# anything links to this library will need to use c++11
         cxx_std_11
 )
 
 set_target_properties(
 	cudaCompressLib
 	PROPERTIES
-		# built with -dc so member functions could be called by other libraries
-		CUDA_SEPARABLE_COMPILATION ON
 		# rename
 		OUTPUT_NAME "cudacompress"
 )

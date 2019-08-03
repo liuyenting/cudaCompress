@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 3.10)
-
 ###
 # Declare dependencies
 ###
@@ -25,22 +23,16 @@ target_include_directories(
         ${CMAKE_SOURCE_DIR}/test
 )
 
-target_compile_features(
-    cudaCompressTest
-    PRIVATE
-        cxx_std_11
-)
-
 set_target_properties(
 	cudaCompressTest
-	PROPERTIES
-		OUTPUT_NAME "testsuite"
+    PROPERTIES
+        # rename
+		OUTPUT_NAME "cpu_test"
 )
 
 target_link_libraries(
     cudaCompressTest
-    PUBLIC
-        cudaCompressLib
     PRIVATE
         ${CUDART_LIBRARY}
+        cudaCompressLib
 )

@@ -137,7 +137,7 @@ int main(int argc, char** argv)
     //std::vector<uint> offsets;
     //arithmeticEncodeCPU(bs, symbols, probs, offsets, 128);
 
-    runTests("data/kodim/kodim%02i.png", 1, 24, 1, "kodim_");
+    runTests("data/kodim/kodim%02i.png", 1, 3, 1, "kodim_");
     //runTests("D:/testimg/new_rgb8_crop64/%02i.png", 1, 14, 1, "newtest_");
     //runTests("F:/Vorarlberg/tex12cm-raw/%02i.raw",  0, 99, 1, "vorarlberg_");
 
