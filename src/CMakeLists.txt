@@ -1,8 +1,4 @@
 cmake_minimum_required(VERSION 3.10)
-project(
-	cudaCompressLib
-	LANGUAGES CXX CUDA
-)
 
 ###
 # Declare dependencies
@@ -46,7 +42,7 @@ target_include_directories(
         $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
 	PRIVATE
 		${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES}
-        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_SOURCE_DIR}/src
 )
 
 target_compile_features(
