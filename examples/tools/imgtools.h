@@ -104,7 +104,8 @@ double computeMaxAbsError(const T* pData, const T* pReconst, unsigned int count,
     double result = 0.0;
     for(unsigned int i = 0; i < count; i++) {
         double diff = double(pReconst[i * numcomps + comp]) - double(pData[i * numcomps + comp]);
-        result = std::max(result, abs(diff));
+        // explicitly cast to double to help template argument deduction
+        result = std::max(result, double(abs(diff)));
     }
 
     return result;
