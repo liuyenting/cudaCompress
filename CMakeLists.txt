@@ -4,7 +4,7 @@ project(
     LANGUAGES CXX CUDA
 )
 
-option(BUILD_SHARED_LIBS "Build shared library" OFF)
+option(BUILD_SHARED_LIBS "Build shared library" ON)
 
 add_subdirectory(src)
 add_subdirectory(test)
