@@ -83,21 +83,21 @@ int main(int argc, char **argv)
     #endif
 
     // speed test: compress and decompress the finest level of a texture/heightfield
-    benchmarkOneLevelImage("data\\UtahTexSample1m.raw", 2048, 2048, 1, 3.0f, iterations, timingDetail);
-    benchmarkOneLevelHeightfield("data\\UtahGeoSample1m.raw", 2048, 2048, iterations, timingDetail);
+    benchmarkOneLevelImage("data/UtahTexSample1m.raw", 2048, 2048, 1, 3.0f, iterations, timingDetail);
+    benchmarkOneLevelHeightfield("data/UtahGeoSample1m.raw", 2048, 2048, iterations, timingDetail);
 
     // speed test: compress and decompress floating-point volumes
-    benchmarkVolumeFloat("data\\Iso_128_128_128_t4000_VelocityX.raw", 128, 128, 128, 2, 0.00136f, iterations, timingDetail);
-    benchmarkVolumeFloat("data\\Iso_256_256_256_t4000_VelocityX.raw", 256, 256, 256, 2, 0.00136f, iterations, timingDetail);
-    benchmarkVolumeFloatQuantFirst("data\\Iso_128_128_128_t4000_VelocityX.raw", 128, 128, 128, 2, 0.005f, iterations, timingDetail);
-    benchmarkVolumeFloatQuantFirst("data\\Iso_256_256_256_t4000_VelocityX.raw", 256, 256, 256, 2, 0.005f, iterations, timingDetail);
-    //benchmarkVolumeFloatMultiGPU("data\\Iso_256_256_256_t4000_VelocityX.raw", 256, 256, 256, 2, 0.005f, iterations, timingDetail);
+    benchmarkVolumeFloat("data/Iso_128_128_128_t4000_VelocityX.raw", 128, 128, 128, 2, 0.00136f, iterations, timingDetail);
+    benchmarkVolumeFloat("data/Iso_256_256_256_t4000_VelocityX.raw", 256, 256, 256, 2, 0.00136f, iterations, timingDetail);
+    benchmarkVolumeFloatQuantFirst("data/Iso_128_128_128_t4000_VelocityX.raw", 128, 128, 128, 2, 0.005f, iterations, timingDetail);
+    benchmarkVolumeFloatQuantFirst("data/Iso_256_256_256_t4000_VelocityX.raw", 256, 256, 256, 2, 0.005f, iterations, timingDetail);
+    //benchmarkVolumeFloatMultiGPU("data/Iso_256_256_256_t4000_VelocityX.raw", 256, 256, 256, 2, 0.005f, iterations, timingDetail);
 
     // speed test: multi-channel volume
     std::vector<std::string> filenames;
-    filenames.push_back("data\\Iso_128_128_128_t4000_VelocityX.raw");
-    filenames.push_back("data\\Iso_128_128_128_t4000_VelocityY.raw");
-    filenames.push_back("data\\Iso_128_128_128_t4000_VelocityZ.raw");
+    filenames.push_back("data/Iso_128_128_128_t4000_VelocityX.raw");
+    filenames.push_back("data/Iso_128_128_128_t4000_VelocityY.raw");
+    filenames.push_back("data/Iso_128_128_128_t4000_VelocityZ.raw");
     benchmarkVolumeFloat(filenames, 128, 128, 128, 2, 0.00136f, iterations, timingDetail);
     benchmarkVolumeFloatQuantFirst(filenames, 128, 128, 128, 2, 0.005f, iterations, timingDetail);
 
@@ -106,7 +106,7 @@ int main(int argc, char **argv)
     // quality test: compress a texture using different quantization steps
     //               speed is not representative because the coarser levels are too small to saturate the GPU
     //printf("QUALITY TEST:\n\n");
-    //std::string filename("data\\Utah_City3.raw");
+    //std::string filename("data/Utah_City3.raw");
     //int width = 2048, height = 2048;
     //float qStart = 2.0f;
     //float qEnd = 5.0f;
