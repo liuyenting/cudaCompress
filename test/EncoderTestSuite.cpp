@@ -11,21 +11,21 @@
 
 #include <cuda_runtime.h>
 
-#include "cudaUtil.h"
-
 #include <cudaCompress/BitStream.h>
 #include <cudaCompress/EncodeCommon.h>
-#include "util.h"
+
 #include <cudaCompress/util/DWT.h>
 #include <cudaCompress/util/Quantize.h>
 #include <cudaCompress/util/YCoCg.h>
 
+
+#include "cudaCompress/cudaUtil.h"
+#include "cudaCompress/util.h"
+#include "CPU/EncodeCPU.h"
+
 #include "Entropy.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
-
-#include "CPU/EncodeCPU.h"
-
 
 namespace cudaCompress {
 

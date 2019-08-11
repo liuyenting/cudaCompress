@@ -3,7 +3,7 @@
 #include <cmath>
 #include <climits>
 
-#include "../util.h"
+#include "cudaCompress/util.h"
 
 
 namespace cudaCompress {

@@ -6,6 +6,7 @@ project(
 
 option(BUILD_SHARED_LIBS "Build shared library" ON)
 
-add_subdirectory(src)
+add_subdirectory(src/cudaCompress)
+add_subdirectory(src/examples)
+add_subdirectory(src/CPU)
 add_subdirectory(test)
-add_subdirectory(examples)

@@ -20,7 +20,7 @@ target_include_directories(
 	PRIVATE
 		${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES}
         ${CMAKE_SOURCE_DIR}/src
-        ${CMAKE_SOURCE_DIR}/test
+        ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 set_target_properties(
@@ -35,4 +35,5 @@ target_link_libraries(
     PRIVATE
         ${CUDART_LIBRARY}
         cudaCompressLib
+        cudaCompressLib_fallback
 )

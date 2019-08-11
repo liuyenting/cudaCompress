@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <cassert>
 
-#include "../util.h"
+#include "cudaCompress/util.h"
 
 
 namespace cudaCompress {

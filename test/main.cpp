@@ -9,7 +9,6 @@
 
 using namespace cudaCompress;
 
-
 bool writeToCSV(const Stats& stats, const std::string& filename)
 {
     std::ofstream file(filename);

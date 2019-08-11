@@ -30,17 +30,6 @@ add_library(
 		util/DWTInt.cu
 		util/Quantize.cu
 		util/YCoCg.cu
-
-		# CPU
-		CPU/ArithmeticCPU.cpp
-		CPU/EncodeCPU.cpp
-		CPU/GolombRiceCPU.cpp
-		CPU/HistogramCPU.cpp
-		CPU/HuffmanCPU.cpp
-		CPU/HuffmanTableCPU.cpp
-		CPU/RBUCCPU.cpp
-		CPU/RunLengthCPU.cpp
-		CPU/YCoCgCPU.cpp
 )
 
 target_include_directories(
@@ -50,7 +39,7 @@ target_include_directories(
         $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
 	PRIVATE
 		${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES}
-        ${CMAKE_SOURCE_DIR}/src
+        ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 target_compile_features(
