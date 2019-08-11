@@ -1,6 +1,8 @@
 ###
 # Declare dependencies
 ###
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
 find_library(CUDART_LIBRARY cudart ${CMAKE_CUDA_IMPLICIT_LINK_DIRECTORIES})
 
 ###
@@ -39,6 +41,7 @@ set_target_properties(
 target_link_libraries(
     cudaCompressExample
     PRIVATE
+        Threads::Threads
         ${CUDART_LIBRARY}
         cudaCompressLib
 )

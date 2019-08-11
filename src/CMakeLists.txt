@@ -69,7 +69,7 @@ set_target_properties(
 
 target_link_libraries(
     cudaCompressLib
-    PRIVATE
+	PRIVATE
 		OpenMP::OpenMP_CXX
 		${CUDART_LIBRARY}
 )
