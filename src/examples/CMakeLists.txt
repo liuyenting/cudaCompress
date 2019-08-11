@@ -18,7 +18,6 @@ add_executable(
         main.cpp
         simpleExample.cpp
         tools/rawfile.cpp
-        tthread/tinythread.cpp
 )
 
 target_include_directories(

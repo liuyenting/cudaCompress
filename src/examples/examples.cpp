@@ -1,9 +1,12 @@
 #include "examples.h"
 
-#include <cmath>
 #include <algorithm>
+#include <cmath>
+#include <condition_variable>
 #include <fstream>
+#include <mutex>
 #include <string>
+#include <thread>
 #include <vector>
 
 #include <cuda_runtime.h>
@@ -17,8 +20,6 @@
 #include <cudaCompress/util/YCoCg.h>
 #include <cudaCompress/Timing.h>
 using namespace cudaCompress;
-
-#include "tthread/tinythread.h"
 
 #include "tools/entropy.h"
 #include "tools/imgtools.h"
@@ -862,8 +863,8 @@ struct TestVolumeFloatArgs
     }
 
     int step;
-    tthread::mutex mutex;
-    tthread::condition_variable stepDone;
+    std::mutex mutex;
+    std::condition_variable stepDone;
 
     int device;
 
@@ -905,7 +906,7 @@ void benchmarkVolumeFloatMultiGPUThreadFunc(void* pArgsRaw)
     setTimingDetail(shared.m_pCuCompInstance, pArgs->timingDetail);
 
     // signal that initialization is done and encoding is about to start
-    { tthread::lock_guard<tthread::mutex> guard(pArgs->mutex);
+    { std::lock_guard<std::mutex> guard(pArgs->mutex);
         pArgs->step++;
     }
     pArgs->stepDone.notify_all();
@@ -923,7 +924,7 @@ void benchmarkVolumeFloatMultiGPUThreadFunc(void* pArgsRaw)
     cudaProfilerStop();
 
     // signal that encoding is done
-    { tthread::lock_guard<tthread::mutex> guard(pArgs->mutex);
+    { std::lock_guard<std::mutex> guard(pArgs->mutex);
         pArgs->step++;
     }
     pArgs->stepDone.notify_all();
@@ -944,7 +945,7 @@ void benchmarkVolumeFloatMultiGPUThreadFunc(void* pArgsRaw)
     cudaSafeCall(cudaHostRegister(bitStream.data(), bitStream.size() * sizeof(uint), cudaHostRegisterDefault));
 
     // signal that decoding is about to start
-    { tthread::lock_guard<tthread::mutex> guard(pArgs->mutex);
+    { std::lock_guard<std::mutex> guard(pArgs->mutex);
         pArgs->step++;
     }
     pArgs->stepDone.notify_all();
@@ -960,7 +961,7 @@ void benchmarkVolumeFloatMultiGPUThreadFunc(void* pArgsRaw)
     cudaProfilerStop();
 
     // signal that decoding is done
-    { tthread::lock_guard<tthread::mutex> guard(pArgs->mutex);
+    { std::lock_guard<std::mutex> guard(pArgs->mutex);
         pArgs->step++;
     }
     pArgs->stepDone.notify_all();
@@ -1007,10 +1008,10 @@ int benchmarkVolumeFloatMultiGPU(const std::string& filenameOrig, uint width, ui
     }
 
     // start threads
-    std::vector<tthread::thread*> threads;
+    std::vector<std::thread*> threads;
     for(size_t i = 0; i < devices.size(); i++)
     {
-        threads.push_back(new tthread::thread(benchmarkVolumeFloatMultiGPUThreadFunc, &args[i]));
+        threads.push_back(new std::thread(benchmarkVolumeFloatMultiGPUThreadFunc, &args[i]));
     }
 
     // wait for threads to finish their steps one by one
@@ -1019,11 +1020,8 @@ int benchmarkVolumeFloatMultiGPU(const std::string& filenameOrig, uint width, ui
     {
         for(size_t i = 0; i < threads.size(); i++)
         {
-            tthread::lock_guard<tthread::mutex> guard(args[i].mutex);
-            while(args[i].step < stepMax)
-            {
-                args[i].stepDone.wait(args[i].mutex);
-            }
+            std::unique_lock<std::mutex> guard(args[i].mutex);
+            args[i].stepDone.wait(guard, [&args, i, stepMax]{ return args[i].step >= stepMax; });
         }
     }
 
