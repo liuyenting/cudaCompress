@@ -1,5 +1,5 @@
-#ifndef __TUM3D__COMPRESS_IMAGE_H__
-#define __TUM3D__COMPRESS_IMAGE_H__
+#ifndef __CUDACOMPRESS__COMPRESS_IMAGE_H__
+#define __CUDACOMPRESS__COMPRESS_IMAGE_H__
 
 
 #include "global.h"

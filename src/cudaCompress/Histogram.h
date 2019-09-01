@@ -1,5 +1,5 @@
-#ifndef __TUM3D_CUDACOMPRESS__HISTOGRAM_H__
-#define __TUM3D_CUDACOMPRESS__HISTOGRAM_H__
+#ifndef __CUDACOMPRESS__HISTOGRAM_H__
+#define __CUDACOMPRESS__HISTOGRAM_H__
 
 
 #include <cudaCompress/global.h>

@@ -1,5 +1,5 @@
-#ifndef __TUM3D__COMPRESS_VOLUME_H__
-#define __TUM3D__COMPRESS_VOLUME_H__
+#ifndef __CUDACOMPRESS__COMPRESS_VOLUME_H__
+#define __CUDACOMPRESS__COMPRESS_VOLUME_H__
 
 
 #include "global.h"

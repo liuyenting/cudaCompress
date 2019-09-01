@@ -1,5 +1,5 @@
-#ifndef __TUM3D_CUDACOMPRESS__RUN_LENGTH_CPU_H__
-#define __TUM3D_CUDACOMPRESS__RUN_LENGTH_CPU_H__
+#ifndef __CUDACOMPRESS__RUN_LENGTH_CPU_H__
+#define __CUDACOMPRESS__RUN_LENGTH_CPU_H__
 
 
 #include <cudaCompress/global.h>

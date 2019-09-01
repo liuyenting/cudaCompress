@@ -1,5 +1,5 @@
-#ifndef __TUM3D_CUDACOMPRESS__GLOBAL_H__
-#define __TUM3D_CUDACOMPRESS__GLOBAL_H__
+#ifndef __CUDACOMPRESS__GLOBAL_H__
+#define __CUDACOMPRESS__GLOBAL_H__
 
 
 namespace cudaCompress {

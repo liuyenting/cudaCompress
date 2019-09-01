@@ -1,5 +1,5 @@
-#ifndef __TUM3D__GPU_RESOURCES_H__
-#define __TUM3D__GPU_RESOURCES_H__
+#ifndef __CUDACOMPRESS__GPU_RESOURCES_H__
+#define __CUDACOMPRESS__GPU_RESOURCES_H__
 
 
 #include "global.h"

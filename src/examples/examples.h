@@ -1,5 +1,5 @@
-#ifndef __TUM3D__EXAMPLES_H__
-#define __TUM3D__EXAMPLES_H__
+#ifndef __CUDACOMPRESS__EXAMPLES_H__
+#define __CUDACOMPRESS__EXAMPLES_H__
 
 
 #include "global.h"

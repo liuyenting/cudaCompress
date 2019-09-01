@@ -1,5 +1,5 @@
-#ifndef __TUM3D_CUDACOMPRESS__ENCODE_H__
-#define __TUM3D_CUDACOMPRESS__ENCODE_H__
+#ifndef __CUDACOMPRESS__ENCODE_H__
+#define __CUDACOMPRESS__ENCODE_H__
 
 
 #include <cudaCompress/global.h>

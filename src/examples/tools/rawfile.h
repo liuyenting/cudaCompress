@@ -1,5 +1,5 @@
-#ifndef __rawfile_h__
-#define __rawfile_h__
+#ifndef __CUDACOMPRESS__RAWFILE_H__
+#define __CUDACOMPRESS__RAWFILE_H__
 
 
 #include "../global.h"

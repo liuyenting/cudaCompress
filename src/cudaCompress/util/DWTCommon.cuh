@@ -1,5 +1,5 @@
-#ifndef __TUM3D__DWT_COMMON_CUH__
-#define __TUM3D__DWT_COMMON_CUH__
+#ifndef __CUDACOMPRESS__DWT_COMMON_CUH__
+#define __CUDACOMPRESS__DWT_COMMON_CUH__
 
 
 namespace cudaCompress {

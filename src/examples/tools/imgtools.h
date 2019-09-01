@@ -1,5 +1,5 @@
-#ifndef __imgtools_h__
-#define __imgtools_h__
+#ifndef __CUDACOMPRESS__IMGTOOLS_H__
+#define __CUDACOMPRESS__IMGTOOLS_H__
 
 
 #include <algorithm>

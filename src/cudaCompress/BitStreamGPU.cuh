@@ -1,5 +1,5 @@
-#ifndef __TUM3D_CUDACOMPRESS__BITSTREAM_GPU_CUH__
-#define __TUM3D_CUDACOMPRESS__BITSTREAM_GPU_CUH__
+#ifndef __CUDACOMPRESS__BITSTREAM_GPU_CUH__
+#define __CUDACOMPRESS__BITSTREAM_GPU_CUH__
 
 
 #include <cudaCompress/global.h>

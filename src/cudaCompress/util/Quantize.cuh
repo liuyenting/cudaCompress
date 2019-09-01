@@ -1,5 +1,5 @@
-#ifndef __TUM3D_CUDACOMPRESS__QUANTIZE_CUH__
-#define __TUM3D_CUDACOMPRESS__QUANTIZE_CUH__
+#ifndef __CUDACOMPRESS__QUANTIZE_CUH__
+#define __CUDACOMPRESS__QUANTIZE_CUH__
 
 
 #include <cudaCompress/global.h>

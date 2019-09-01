@@ -1,5 +1,5 @@
-#ifndef __TUM3D__CUDA_UTIL_H__
-#define __TUM3D__CUDA_UTIL_H__
+#ifndef __CUDACOMPRESS__CUDA_UTIL_H__
+#define __CUDACOMPRESS__CUDA_UTIL_H__
 
 
 #include <cstdlib>

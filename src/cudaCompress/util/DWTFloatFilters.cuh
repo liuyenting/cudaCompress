@@ -1,5 +1,5 @@
-#ifndef __TUM3D__DWT_FLOAT_FILTERS_CUH__
-#define __TUM3D__DWT_FLOAT_FILTERS_CUH__
+#ifndef __CUDACOMPRESS__DWT_FLOAT_FILTERS_CUH__
+#define __CUDACOMPRESS__DWT_FLOAT_FILTERS_CUH__
 
 
 namespace cudaCompress {

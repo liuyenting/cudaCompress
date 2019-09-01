@@ -1,5 +1,5 @@
-#ifndef __entropy_h__
-#define __entropy_h__
+#ifndef __CUDACOMPRESS__ENTROPY_H__
+#define __CUDACOMPRESS__ENTROPY_H__
 
 
 #include <cassert>
