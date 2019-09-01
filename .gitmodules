@@ -1,0 +1,3 @@
+[submodule "lib/TinyTIFF"]
+	path = lib/TinyTIFF
+	url = https://github.com/liuyenting/TinyTIFF.git
